@@ -25,9 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sshagent(['ec2-ssh-key-tomcat']) {
-                    sh """
-                    scp -i rajveer-key.pem target/*.war ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}
-                    """
+                    sh 'scp -o StrictHostKeyChecking=no target/SimpleJavaWebApp.war ubuntu@${DEPLOY_HOST}:${DEPLOY_PATH}'
                 }
             }
         }
