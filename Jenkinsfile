@@ -6,7 +6,7 @@ pipeline {
     environment {
         DEPLOY_USER = 'ubuntu'
         DEPLOY_HOST = '16.170.239.79'
-        DEPLOY_PATH = '/home/ubuntu/tomcat9/webapps' // or /opt/tomcat9/webapps if using root
+        DEPLOY_PATH = '/home/ubuntu/tomcat9/webapps' 
     }
 
     stages {
