@@ -30,4 +30,13 @@ pipeline {
             }
         }
     }
+    post{
+        failure{
+            emailext (
+                    subject: "Build fail: ${env.JOB_NAME} #{env.BUILD_NUMBER}",
+                    body: "Check Details - ${env.BUILD_URL}",
+                    to: "rjve123009@gmail.com"
+                )
+        }
+    }
 }
